@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This document just shows the formatting as a reference
+
+\subsection *{Document Formatting}
+\label{subsec:doc_format}
+\hrulefill \\
+This section describes the formatting in the~\LaTeX~document
+\begin{itemize}
+\item \verb+Input to different forms and file names are in this font+ 
+\item \verb+$ Terminal_input_has -a "$" -in front+ 
+\item[] 
+\begin{lstlisting}
+always @ (*) begin
+  The codes right now are tuned to Verilog;
+  Modify the lstlisting to support other languages;
+end
+\end{lstlisting}
+\item \textbf{Menu $\Rightarrow$ Navigation $\Rightarrow$ Has 
+  $\Rightarrow$ arrows}
+\item \textit{Window names} and \textit{``Input form names''} are in italic
+\end{itemize}
+\hrulefill
+
+
+
+%        \section {Writing codes in the \LaTeX~environment}
+%        You can write your codes using \verb+lstlisting+. The default style is set to 
+%        \verb+custom_verilog+, which is a Verilog environment (defined in the 
+%        \verb+./include/code_params.tex+). To use the default environement use:
+%
+%        \begin{lstlisting}[language={[LaTeX]{TeX}},numbers=none]
+%\begin{^\verb+lstlisting+^}[label=code:my_label,caption={My Caption}]
+%  <Some Code Here>;
+%  <More Code Here>;
+%  <etc.>
+%\end{^\verb+lstlisting+^}
+%        \end{lstlisting}
+%        \verb+label+ keyword allows you to reference your code, while \verb+caption+ creates a
+%        caption (Duh!).
+%
+%        \section {Special functions that you can use}
+%        \label{sec:functions}
+%        I have written some \LaTeX functions that you can use. All of them are defined in the
+%        \verb+./include/+ \verb+custom_comms.tex+ file. The possible functions are:
+%        \begin{lstlisting}[language={[LaTeX]{TeX}},numbers=none]
+%\makespace % Creates spacing after the \wrapfigure
+%        \end{lstlisting}
+%        
+%        \subsection {Functions for collaboration}
+%        \label{sec:functions:collaboration}
+%        These functions might help you if you are writing a document with someone:
+%        \begin{lstlisting}[language={[LaTeX]{TeX}},numbers=none]
+%\fixme{This needs to be fixed! Are you sure this is right?}
+%        \end{lstlisting}
+%        Result: \\
+%        \fixme{This needs to be fixed! Are you sure this is right?}
+%
+%        \begin{lstlisting}[language={[LaTeX]{TeX}},numbers=none]
+%I have written a long text, and I am not sure if whatever after that is important.
+%\ignore{This text although was written will not be shown on the final document.}
+%I have ignored it for now, to see how it would look like without it.
+%        \end{lstlisting}
+%        Result: \\
+%        I have written a long text, and I am not sure if whatever after that is important.
+%        \ignore{This text although was written will not be shown on the final document.}
+%        I have ignored it for now, to see how it would look like without it.
+%
+\begin{algorithm}[H]
+    \caption{UDT}
+    \label{alg:resUDT}
+    \begin{algorithmic}[1]
+        \State \verb+Structure+ UDT: resNode
+        \State Voltage
+        \State Current
+        \State Impedance \Comment{This is the impedance measured from a port.}
+        \State Sum of Previous Stage's Impedance \Comment{This is for current calculation.}
+        \State Port Direction \Comment{This should be a boolean attribute, but I used enumerate
+        variable.}
+    \end{algorithmic}
+\end{algorithm}

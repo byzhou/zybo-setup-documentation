@@ -1,0 +1,70 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You can use 
+% \verbatiminput{<file_name>} 
+% to show source codes. Alternatively, use 
+% \verb+<your_code_here>+ to show code inline
+% or use
+% \begin{verbatim}
+%    ...
+% \end{verbatim}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ../include/code_params has a customized
+% code styling (for Verilog), please, modify
+% to use with any other source code.
+% Also, ../include/custom_comms has necessary
+% functions for the lstlistings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\documentclass[12pt,DIV12]{scrartcl}	% I find this document type the nicest, can use beavel
+\documentclass[12pt]{article} % This document is the most neutral
+
+% ==========================================
+% Modify these on your own risk... :)
+\input{ ../include/include_packs}	% Packages
+\input{ ../include/page_params} 	% Page layout and parameters
+\input{ ../include/custom_comms}	% Custom commands
+\input{ ../include/code_params} 	% Code params for LISTINGS package
+
+
+% ==========================================
+% Document parameters
+% You can include pictures here
+\addHeader{ADI}{RNM} % {Left}{Right}
+
+% ==========================================
+% Document information:
+\title{Real Number Modeling with System Verilog 2012}
+% \subtitle{Tutorial}
+\date{2015 Summer}
+\author{ 
+  Analog Devices, Inc\thanks{email \href{mailto:Boyou.Zhou@Analog.com}{Boyou.Zhou@Analog.com} 
+    for the source codes}
+}
+
+% ==========================================
+% Main Body:
+\begin{document}
+        \maketitle
+        
+        \section *{Motivation}
+        \label{sec:motivation}
+        \pagebreak
+        \tableofcontents
+
+        \pagebreak
+             
+        \section{Introduction}
+
+
+        \section{Conclusions}
+        \label{sec:conclusion}
+
+\begin{lstlisting}
+    path\to\your\colorirun parameters ....
+\end{lstlisting}
+        
+        \pagebreak
+        \bibliographystyle{unsrt}
+        \bibliography{../src/top}
+        
+\end{document}

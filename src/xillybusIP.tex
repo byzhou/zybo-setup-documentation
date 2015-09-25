@@ -1,0 +1,56 @@
+This part is for setting up the xillybus IP environment. The xillybus is the IP of the interface on
+the FPGA. The Xillybus company also provides the software level support, which are the interfaces on
+the linux system. The software support includes the kernel module and the app software. App software
+utilize the pthread for both read and write in order to increase the throughput of the FPGA API. But
+first, we need to setup the SD card for the linux system.
+
+The micro SD card needs to be formatted for the particular file system. Here is the tutorial of
+formatting the micro SD card. Follow only the first three steps.
+
+\begin{lstlisting}
+    http://www.instructables.com/id/Setting-up-the-Zybot-Software/
+\end{lstlisting}
+
+The reformatting commands
+\begin{lstlisting}
+    sudo mkfs -t vfat -n ZYBO_BOOT /dev/sdb1
+    sudo mkfs -t ext4 -L ROOT_FS /dev/sdb2
+\end{lstlisting}
+
+
+The following folder is downloaded from the Xillybus website, which includes all the hardware
+related files.
+\begin{lstlisting}
+    xillinux-eval-zybo-1.3c
+\end{lstlisting}
+
+Inside of the folder, the bootfiles go to the SD card's ZYBO\_BOOT partition. The downloaded img file, 
+\begin{lstlisting}
+    xillinux-1.3.img
+\end{lstlisting}
+include linux file system and uImage. The uImage goes into the  ZYBO\_BOOT partition and linux file
+system goes to ROOT\_FS.
+
+The other files in xillinux-eval-zybo-1.3c are the examples of verilog codes. The example verilog
+code are the APIs that are used in the FPGA application. The one that I like is in the folder
+\begin{lstlisting}
+    verilog
+\end{lstlisting}
+It is the verilog code for a fifo inside of FPGA that is passing all the information from the ARM
+core back to ARM core.
+
+Install the module 
+\begin{lstlisting}
+    make
+    make install
+    cp 10-xillybus.rules /etc/udev/rules.d/
+    modprobe xillybus_pcie
+    lsprobe
+\end{lstlisting}
+
+Basic testing 
+\begin{lstlisting}
+    date > /dev/xillybus_write_8
+    cat /dev/xillybus_read_8
+\end{lstlisting}
+

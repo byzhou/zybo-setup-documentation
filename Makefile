@@ -1,11 +1,11 @@
-default:all preview
+default:everything
 all:
 	./run.sh
 
 view:
 	evince formal.pdf &
 
-everything:all 
+everything:all evince
 clean:
 	rm -rf build/* *.pdf
 

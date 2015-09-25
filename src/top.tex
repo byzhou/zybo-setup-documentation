@@ -29,15 +29,15 @@
 % ==========================================
 % Document parameters
 % You can include pictures here
-\addHeader{ADI}{RNM} % {Left}{Right}
+\addHeader{BU}{ECE} % {Left}{Right}
 
 % ==========================================
 % Document information:
-\title{Real Number Modeling with System Verilog 2012}
+\title{Zybo Board Setup Documentation}
 % \subtitle{Tutorial}
-\date{2015 Summer}
+\date{2015 fall}
 \author{ 
-  Analog Devices, Inc\thanks{email \href{mailto:Boyou.Zhou@Analog.com}{Boyou.Zhou@Analog.com} 
+  Boston University\thanks{email \href{mailto:bobzhou@bu.edu}{bobzhou@bu.edu} 
     for the source codes}
 }
 
@@ -48,13 +48,30 @@
         
         \section *{Motivation}
         \label{sec:motivation}
+        Zybo board contains an ARM core and an FPGA for both GPP (General Purpose Processor)
+        calculations and high-performance calculations with FPGA. The setup for the Zybo board is
+        pretty awkward, since student does not have unlimited license for the board compiler,
+        vivado. This documentation provides an convenient way in setting up compiling, synthesis and
+        mapping tutorials for Zybo board. The purpose is that the board can eventually self-tunned
+        to functional specific high-performance computing as GPP needed. 
         \pagebreak
         \tableofcontents
 
         \pagebreak
              
         \section{Introduction}
+        \label{sec:introduction}
 
+        \section{Installation}
+        \label{sec:installation}
+        
+        \section{StaticIP}
+        \label{sec:StaticIP}
+        \input{../src/staticip}
+
+        \section{Setup Xillybus IP Interface}
+        \label{sec:xillybusIP}
+        \input{../src/xillybusIP}
 
         \section{Conclusions}
         \label{sec:conclusion}

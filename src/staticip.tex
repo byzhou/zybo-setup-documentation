@@ -1,0 +1,33 @@
+The static IP is for setting up the wire connection between two machines. In order to have static
+IP, you need to turn off the DHCP. The way to turn off the DHCP and assign another static IP system
+is to modify the following file.
+
+\begin{lstlisting}
+    /etc/network/interfaces
+\end{lstlisting}
+
+These few lines of codes need to be added in the \verb+interfaces+ file.
+
+\begin{lstlisting}
+    auto eth0
+    iface eth0 inet static
+    address 192.168.1.50
+    netmask 255.255.255.0
+    network 192.168.0.0
+\end{lstlisting}
+
+For the configuration of \textit{ssh} is in the following file, including the port setup.
+
+\begin{lstlisting}
+    /etc/ssh/sshd_config
+\end{lstlisting}
+
+For restart the eth0 port, the code is listed below. Type in these in command line.
+\begin{lstlisting}
+    sudo ifdown eth0 && sudo ifup eth0
+\end{lstlisting}
+
+For restart the network manager, type in the following commands in terminal.
+\begin{lstlisting}
+    sudo service network-manager restart
+\end{lstlisting}

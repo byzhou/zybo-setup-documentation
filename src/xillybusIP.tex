@@ -31,6 +31,11 @@ Inside of the folder, the bootfiles go to the SD card's ZYBO\_BOOT partition. Th
 include linux file system and uImage. The uImage goes into the  ZYBO\_BOOT partition and linux file
 system goes to ROOT\_FS.
 
+Inorder to copy the file system to the sd card, enter these commands:
+\begin{lstlisting}
+    sudo rsync -a ./ /media/bobzhou/ROOT_FS
+\end{lstlisting}
+
 The other files in xillinux-eval-zybo-1.3c are the examples of verilog codes. The example verilog
 code are the APIs that are used in the FPGA application. The one that I like is in the folder
 \begin{lstlisting}
